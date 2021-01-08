@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 import CreateTweet from './components/CreateTweet'
 import TweetList from './components/TweetList'
 
@@ -6,14 +6,16 @@ import TweetList from './components/TweetList'
 
 function App() {
 
+  const [textInput, setTextInput] = useState('');
+  const [tweets,setTweets] = useState([]);
+
   const nom = "jordan"
-  const message = "Voici un tweet original"
 
   return (
     <div className="App">
       <h1>Hello React</h1>
-      <CreateTweet  />
-      <TweetList  auteur={nom} message={message}/>
+      <CreateTweet textInput={textInput} setTextInput={setTextInput} tweets={tweets} setTweets={setTweets} />
+      <TweetList setTweets={setTweets} tweets={tweets}  auteur={nom} />
     </div>
   );
 }
