@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , {useState , useEffect} from 'react';
 import CreateTweet from './components/CreateTweet'
 import TweetList from './components/TweetList'
 
@@ -6,10 +6,17 @@ import TweetList from './components/TweetList'
 
 function App() {
 
+  
+
   const [textInput, setTextInput] = useState('');
   const [tweets,setTweets] = useState([]);
 
   const nom = "jordan"
+
+
+  useEffect(() => {
+    console.log('funct running')
+  },[])
 
   return (
     <div className="App">
